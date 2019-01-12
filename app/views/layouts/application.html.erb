@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Diversity</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <header style="background-color: #0000003b;">
+ <div>
+   <nav>
+   </nav>
+
+   <nav>
+     <ul>
+      <% if user_signed_in? %>
+       <li>
+         <%= link_to "My Page", user_path(current_user)  %>
+       </li>
+       <li>
+         <%= link_to "駐車場登録", new_parking_path %>
+       </li>
+       <li>
+         <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+       </li>
+
+
+       <p><%= current_user.name %></p>
+
+       <% else %>
+
+       <li>
+          <%= link_to " sign up", new_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to " login", new_user_session_path %>
+        </li>
+        <% end %>
+     </ul>
+ </nav>
+</div>
+</header>
+
+  <body>
+
+     <%= yield %>
+  </body>
+</html>

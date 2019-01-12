@@ -1,0 +1,28 @@
+<h1>ユーザー詳細ページ</h1>
+
+
+<table>
+	<thead>
+		<tr>
+			<th>ユーザーid</th>
+			<th>ユーザーname</th>
+			<th>アドレス</th>
+			<th>電話番号</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @user.id =%></td>
+			<td><%= @user.name =%></td>
+			<td><%= @user.email =%></td>
+			<td><%= @user.phone_number =%></td>
+
+	</tr>
+
+		<td><%= link_to "プロフィール編集", edit_user_path(@user)%></td>
+		<td><%= link_to "駐車場管理", park_list_path %></td>
+	</tr>
+
+	</tbody>
+
+</table>

@@ -1,0 +1,5 @@
+class AddLongitubeToParkings < ActiveRecord::Migration[5.2]
+  def change
+    add_column :parkings, :longitube, :float
+  end
+end
