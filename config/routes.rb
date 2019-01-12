@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 	root :to => 'parkings#top'
+	get '/map_request', to: 'parkings#map', as: 'map_request'
 #root 'parkings#new'
 
   devise_for :users

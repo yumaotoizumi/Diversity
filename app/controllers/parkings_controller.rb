@@ -1,5 +1,17 @@
 class ParkingsController < ApplicationController
+
+	def map
+	  results = Geocoder.search(params[:address])
+	  @latlng = results.first.coordinates
+	  # これでmap.js.erbで、経度緯度情報が入った@latlngを使える。
+
+	  respond_to do |format|
+	  	format.js
+	  end
+	end
+
 	def top
+
 	end
 
 	def new
@@ -22,6 +34,7 @@ class ParkingsController < ApplicationController
 	end
 
 	def edit
+
 	end
 
 	def destroy
@@ -31,9 +44,14 @@ class ParkingsController < ApplicationController
 	end
 
 	def update
+
 	end
+
 	private
+
     def parking_params
         params.require(:parking).permit(:price, :stock, :car_model, :type, :address, :postal_code, :parking_image)
     end
+
 end
+
