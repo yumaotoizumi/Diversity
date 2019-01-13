@@ -16,12 +16,34 @@
 </style>
 
 <script>
-	let mapInstance
-function initMap(){
-  mapInstance = new google.maps.Map(document.getElementById('map'), {
-  center: {lat: -34.397, lng: 150.644},
-  zoom: 8
-  });
-}
+	let map
+	function initMap(){
+		map = new google.maps.Map(document.getElementById('map'), {
+			center: {lat: 35.6954806, lng: 139.76325010000005},
+			zoom: 8
+	  	});
+
+	  	var locations = [
+	        ['Title A', 35.69496,139.76746000000003],
+	    	['Title B', 35.6951212,139.76610649999998],
+	    ];
+	    var infowindow = new google.maps.InfoWindow;
+	    var marker, i;
+
+	    for (i = 0; i < locations.length; i++) {
+	        marker = new google.maps.Marker({
+	             position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+	             map: map
+	        });
+
+	        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+	             return function() {
+	                 infowindow.setContent(locations[i][0]);
+	                 infowindow.open(map, marker);
+	             }
+	        })(marker, i));
+	    }
+	}
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWd5FVOLqsE5hizPcnsZNl4O5noZnnLPI&callback=initMap" async defer></script>
