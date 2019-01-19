@@ -4,8 +4,8 @@
 			<th>ユーザーid</th>
 			<th>パーキングid</th>
 			<th>カータイプ</th>
-			<th>貸出名</th>
 			<th>値段（１日の料金）</th>
+			<th>消去</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -14,8 +14,8 @@
 			<td><%= parking.user.id %></td>
 			<td><%= parking.id %></td>
 			<td><%= parking.car_model %></td>
-			<td><%= parking.user.name %></td>
 			<td><%= parking.price %></td>
+			<td><%= link_to "削除", parking_path(@user.parkings), method: :delete %></td>
 		</tr>
 		<%end%>
 	</tbody>

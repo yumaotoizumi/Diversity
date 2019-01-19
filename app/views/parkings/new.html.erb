@@ -2,6 +2,9 @@
 
 <%= form_for(@parking) do |parking|%>
 
+ <%= parking.attachment_field :parking_image %>
+
+
 
   <h4>利用可能サイズ</h4>
  <%= parking.select :car_model, [["軽自動車", "軽自動車"], ["コンパクトカー", "コンパクトカー"], ["セダン", "セダン"], ["SUV", "SUV"], ["ミニバン", "ミニバン"]]%>

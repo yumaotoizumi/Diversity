@@ -1,16 +1,38 @@
 (function(){
-  // 位置情報をもつ変数を用意
-  let pos = new google.maps.LatLng(
-   <%= @latlng[0] %>, //latitude
-   <%= @latlng[1] %>  //longitude
-  );
+   console.log("検索ボタンが押されました")
+   // 位置情報をもつ変数を用意
+   let pos = new google.maps.LatLng(
+    <%= @latlng[0] %>, //latitude
+    <%= @latlng[1] %>  //longitude
+   );
 
-  mapInstance.setCenter(pos)
-  let marker = new google.maps.Marker({
-    map: mapInstance,
-    position: pos,
-  });
+   map.setCenter(pos)
+   let marker = new google.maps.Marker({
+     map: map,
+     position: pos,
+   });
 
 
-})()
+ })()
 
+
+// $(function(){
+//   $("#submit").click(function(){ //送信ボタンを押すとイベントが発火します
+//     $.ajax({
+//       type:'GET', // リクエストのタイプはGETです
+//       url: '/multi_pin', // URLは"/multi_pin"を指定します
+//       dataType: 'json' // データの型はjsonで指定します
+//     })
+//     .done(function(){
+//       // 通信に成功した場合の処理です
+
+//       @parking.forEach(function(){
+//         $('.@parking').append(`<li>${parking.address} </li>`);
+//       }) //データは配列形式でかえってくるので、forEachで繰り返し処理をします
+//     })
+//     .fail(function(){
+//       // 通信に失敗した場合の処理です
+//       alert('検索に失敗しました') // alertで検索失敗の旨を表示します
+//     })
+//   })
+// })

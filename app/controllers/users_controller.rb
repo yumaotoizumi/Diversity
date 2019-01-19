@@ -14,6 +14,12 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id)
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to parking_path
+  end
+
   def park_list
     @user = User.find(current_user.id)
   end
