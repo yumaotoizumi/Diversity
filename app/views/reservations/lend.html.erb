@@ -1,0 +1,14 @@
+ <% @parkings.each do |parkings| %>
+ <% parkings.reservations.each do |reservation| %>
+
+<%= reservation.user.name %>
+ <%= reservation.parking.price%>円
+
+
+<%= reservation.start_day.strftime('%y年%m月%d日') %>
+<%= reservation.end_day.strftime('%y年%m月%d日') %>
+
+
+<% end %>
+
+<% end %>

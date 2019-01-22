@@ -11,18 +11,19 @@
 		</tr>
 	</thead>
 	<tbody>
+
 		<tr>
 			<td><%= @user.id =%></td>
 			<td><%= @user.name =%></td>
 			<td><%= @user.email =%></td>
 			<td><%= @user.phone_number =%></td>
+	    </tr>
 
-	</tr>
-
-		<td><%= link_to "プロフィール編集", edit_user_path(@user)%></td>
-		<td><%= link_to "駐車場管理", park_list_path %></td>
-	</tr>
 
 	</tbody>
 
 </table>
+        <p><%= link_to "プロフィール編集", edit_user_path(@user)%></p>
+		<p><%= link_to "駐車場管理", park_list_path %></p>
+		<p><%= link_to "駐車場借りた", reservations_path %></p>
+		<p><%= link_to "駐車場借した", lend_path %></p>

@@ -15,7 +15,7 @@
 			<td><%= parking.id %></td>
 			<td><%= parking.car_model %></td>
 			<td><%= parking.price %></td>
-			<td><%= link_to "削除", parking_path(@user.parkings), method: :delete %></td>
+			<td><%= link_to "削除", parking_path(parking), method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
 		</tr>
 		<%end%>
 	</tbody>

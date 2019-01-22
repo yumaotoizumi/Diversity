@@ -14,5 +14,7 @@ get '/park_list' => 'users#park_list',as: 'park_list'
  resources :parkings do
     resources :reservations
   end
+   get '/reservations' => 'reservations#index'
+   get '/lend' => 'reservations#lend'
 
 end

@@ -41,6 +41,7 @@ class ParkingsController < ApplicationController
 
 	def show
 		@parking = Parking.find(params[:id])
+		@reservation = Reservation.new
 	end
 
 	def edit
@@ -48,10 +49,10 @@ class ParkingsController < ApplicationController
 	end
 
 	def destroy
-		@parking = Parking.find(params[id])
+		@parking = Parking.find(params[:id])
 		@parking.user_id = current_user.id
 		@parking.destroy
-		redirect_to parking_path
+		redirect_to parkings_path
 	end
 
 	def update

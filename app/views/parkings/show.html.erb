@@ -1,4 +1,6 @@
-<%= form_for [@parking, @parking.reservations.new] do |f| %>
+
+
+<%= form_for [@parking, @reservation] do |f| %>
 
 
 <%= f.hidden_field :parking_id, value: @parking.id %>
