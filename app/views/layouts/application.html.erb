@@ -33,6 +33,11 @@
          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
        </li>
 
+       <li>
+         <%= link_to "駐車場一覧", parkings_path %>
+       </li>
+
+
 
        <p><%= current_user.name %></p>
 

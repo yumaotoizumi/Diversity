@@ -1,3 +1,4 @@
+<h4>駐車場利用履歴</h4>
 <table>
  <% @reservations.each do |reservation| %>
 
@@ -6,8 +7,13 @@
  <%= reservation.parking.price%>円
  <%= reservation.start_day.strftime('%Y年%-m月%-d日') %>
  <%= reservation.end_day.strftime('%Y年%m月%d日') %>
+ <%#= (reservation.end_day-reservation.start_day) * reservation.parking.price %>
+ <%  reserve_total = ((reservation.end_day-reservation.start_day) / 86400) %>
+ <%= reserve_total.ceil * reservation.parking.price %>円
+ <!-- <%= reserve_total %> -->
 
 
-
+<br>
+<br>
  <% end %>
  </table>

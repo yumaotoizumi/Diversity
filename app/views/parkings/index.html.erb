@@ -18,6 +18,7 @@
 			<td><%= parking.car_model %></td>
 			<td><%= parking.user.name %></td>
 			<td><%= parking.price %>円</td>
+			<td><%= link_to "予約ページ", parking_path(parking) %></td>
 		</tr>
 		<%end%>
 	</tbody>

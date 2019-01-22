@@ -6,6 +6,7 @@
 			<th>カータイプ</th>
 			<th>値段（１日の料金）</th>
 			<th>消去</th>
+			<th>編集</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -16,6 +17,9 @@
 			<td><%= parking.car_model %></td>
 			<td><%= parking.price %></td>
 			<td><%= link_to "削除", parking_path(parking), method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+			<td><%= link_to "編集", edit_parking_path(parking) %></td>
+
+
 		</tr>
 		<%end%>
 	</tbody>

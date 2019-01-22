@@ -45,6 +45,7 @@ class ParkingsController < ApplicationController
 	end
 
 	def edit
+		@parking = Parking.find(params[:id])
 
 	end
 
