@@ -8,7 +8,7 @@ class ReservationsController < ApplicationController
     	 redirect_to root_path notice:"予約が完了しました"
    	 else
         @reservations = current_user.reservations.all
-   	 	render :index
+   	 	redirect_to parkings_path
    	 end
 	end
 

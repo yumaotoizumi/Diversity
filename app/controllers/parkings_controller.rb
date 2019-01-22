@@ -57,6 +57,9 @@ class ParkingsController < ApplicationController
 	end
 
 	def update
+		 @parking = Parking.find(params[:id])
+		 @parking.update(parking_params)
+		 redirect_to park_list_path(@parking.id)
 
 	end
 
