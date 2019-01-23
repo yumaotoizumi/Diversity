@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 #root '/parkings/top' => 'parkings#top'
 resources :users, only: [:show, :edit, :destroy, :update]
-resources :parkings, only: [:top, :new, :create, :index, :show, :edit, :destroy, :update]
+resources :parkings, only: [:top, :new, :create, :index, :show, :edit, :destroy, :update]do
+   resources :parking_images, only: [:new, :create, :index, :show]
+end
 get '/park_list' => 'users#park_list',as: 'park_list'
 
 

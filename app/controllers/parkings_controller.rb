@@ -32,7 +32,7 @@ class ParkingsController < ApplicationController
 	  	#@parking.latitude = latlng[0]
 	  	#@parking.logitutde = latlng[1]
 		@parking.save
-		redirect_to parkings_path
+		redirect_to new_parking_parking_image_path(@parking)
 	end
 
 	def index

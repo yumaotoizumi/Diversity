@@ -1,0 +1,8 @@
+<%=form_for [@parking,@parking_image] do |image|%>
+
+ <%= image.attachment_field :image %>
+
+<%= image.submit '写真の追加'%>
+
+<% end %>
+<%= link_to "駐車場一覧", parkings_path %>

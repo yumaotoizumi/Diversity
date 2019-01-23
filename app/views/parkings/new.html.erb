@@ -2,9 +2,6 @@
 
 <%= form_for(@parking) do |parking|%>
 
- <%= parking.attachment_field :parking_image %>
-
-
 
   <h4>利用可能サイズ</h4>
  <%= parking.select :car_model, [["軽自動車", "軽自動車"], ["コンパクトカー", "コンパクトカー"], ["セダン", "セダン"], ["SUV", "SUV"], ["ミニバン", "ミニバン"]]%>
@@ -18,6 +15,6 @@
   <h4>１日あたりの料金</h4>
  <%= parking.text_field :price %>
 
- <%= parking.submit '投稿'%>
+ <%= parking.submit '画像登録へ'%>
 
   <% end %>
