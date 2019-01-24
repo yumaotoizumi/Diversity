@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_24_033250) do
+ActiveRecord::Schema.define(version: 2019_01_24_111045) do
 
   create_table "loan_histories", force: :cascade do |t|
     t.integer "loan_price"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2019_01_24_033250) do
     t.float "latitube"
     t.float "longitube"
     t.text "notes"
+    t.float "longitude"
+    t.float "latitude"
   end
 
   create_table "reservations", force: :cascade do |t|

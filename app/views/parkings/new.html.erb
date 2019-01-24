@@ -1,8 +1,7 @@
 <h1>貸出駐車場登録 </h1>
 
-
+<%= form_for(@parking) do |parking|%>
   <table>
-  	<%= form_for(@parking) do |parking|%>
 <thead>
 </thead>
 	  	<tbody>
@@ -32,5 +31,6 @@
 	  	    </tr>
 
 	  	</tbody>
-  	<% end %>
+
   </table>
+<% end %>
