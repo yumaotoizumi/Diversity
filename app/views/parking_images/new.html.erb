@@ -1,3 +1,10 @@
+<% @parking_images.each do |parking_image| %>
+  <%= attachment_image_tag parking_image,:image, :fill, 100, 100%>
+  <%= link_to "削除", parking_path(parking_image), method: :delete, data: { confirm: '本当に削除しますか?' } %>
+<% end %>
+
+
+
 <%=form_for [@parking,@parking_image] do |image|%>
 
  <%= image.attachment_field :image %>
@@ -5,4 +12,4 @@
 <%= image.submit '写真の追加'%>
 
 <% end %>
-<%= link_to "駐車場一覧", parkings_path %>
+<%= link_to "戻る", park_list_path %>

@@ -20,8 +20,7 @@
 			<td><%= parking.price %></td>
 			<td><%= link_to "削除", parking_path(parking), method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
 			<td><%= link_to "編集", edit_parking_path(parking) %></td>
-			<td><%= link_to "画像追加", new_parking_parking_image_path(parking) %></td>
-			<td><%= link_to "画像消去", parking_parking_images_path(parking) %></td>
+			<td><%= link_to "画像編集", new_parking_parking_image_path(parking) %></td>
 
 
 

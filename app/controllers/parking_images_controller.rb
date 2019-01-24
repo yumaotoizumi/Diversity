@@ -3,6 +3,8 @@ class ParkingImagesController < ApplicationController
 	def new
 		@parking_image = ParkingImage.new
 		@parking = Parking.find(params[:parking_id])
+
+		@parking_images = ParkingImage.where(parking_id: @parking.id)
 	end
 
 	def create
@@ -14,8 +16,8 @@ class ParkingImagesController < ApplicationController
 	end
 
 	def index
-		@parking = Parking.find(params[:parking_id])
-		@parking_image = ParkingImage.where(parking_id: @parking.id)
+		@parkings = Parking.find(params[:parking_id])
+		@parking_images = ParkingImage.where(parking_id: @parking.id)
 	end
 
 	def show
