@@ -1,3 +1,9 @@
+ <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
 <% @parking_images.each do |parking_image| %>
   <%= attachment_image_tag parking_image,:image, :fill, 100, 100%>
   <%= link_to "削除", parking_parking_image_path(@parking, parking_image), method: :delete, data: { confirm: '本当に削除しますか?' } %>
@@ -12,4 +18,4 @@
 <%= image.submit '写真の追加'%>
 
 <% end %>
-<%= link_to "戻る", park_list_path %>
+<%= link_to "パーキングリストへ戻る", park_list_path %>

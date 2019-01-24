@@ -11,8 +11,10 @@ class ParkingImagesController < ApplicationController
 		@parking = Parking.find(params[:parking_id])
 	    @parking_image = ParkingImage.new(parking_image_params)
 	    @parking_image.parking_id = @parking.id
-	    @parking_image.save
-	    redirect_to new_parking_parking_image_path
+	    if  @parking_image.save
+		    flash[:notice] = "画像投稿成功しました！"
+		    redirect_to new_parking_parking_image_path
+	    end
 	end
 
 	def index
