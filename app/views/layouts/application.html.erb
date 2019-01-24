@@ -10,12 +10,12 @@
   </head>
 
   <header style="background-color: #0000003b;">
- <div>
+ <div class="collapse navbar-collapse" id="navbarEexample">
    <nav>
    </nav>
 
    <nav>
-     <ul>
+     <ul class="nav navbar-nav navbar-left">
       <% if user_signed_in? %>
        <li>
          <%= link_to "My Page", user_path(current_user)  %>
@@ -30,16 +30,15 @@
 
 
        <li>
-         <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-       </li>
-
-       <li>
          <%= link_to "駐車場一覧", parkings_path %>
        </li>
 
+       <li>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
 
+       </li>
 
-       <p><%= current_user.name %></p>
+       <li><%= current_user.name %></li>
 
        <% else %>
 

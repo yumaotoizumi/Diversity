@@ -53,7 +53,7 @@ class ParkingsController < ApplicationController
 		@parking = Parking.find(params[:id])
 		@parking.user_id = current_user.id
 		@parking.destroy
-		redirect_to parkings_path
+		redirect_to park_list_path
 	end
 
 	def update

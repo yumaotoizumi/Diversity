@@ -1,25 +1,36 @@
 <h1>貸出駐車場登録 </h1>
 
-<%= form_for(@parking) do |parking|%>
 
+  <table>
+  	<%= form_for(@parking) do |parking|%>
+<thead>
+</thead>
+	  	<tbody>
+	  		<tr>
+	  			<th>利用可能サイズ</th>
+	  			<td><%= parking.select :car_model, [["軽自動車", "軽自動車"], ["コンパクトカー", "コンパクトカー"], ["セダン", "セダン"], ["SUV", "SUV"], ["ミニバン", "ミニバン"]]%></td>
+	  		</tr>
 
-  <h4>利用可能サイズ</h4>
- <%= parking.select :car_model, [["軽自動車", "軽自動車"], ["コンパクトカー", "コンパクトカー"], ["セダン", "セダン"], ["SUV", "SUV"], ["ミニバン", "ミニバン"]]%>
+	  		<tr>
+	  			<th>郵便番号</th>
+	  			<td><%= parking.text_field :postal_code %></td>
+	  		</tr>
 
- <h4>郵便番号</h4>
- <%= parking.text_field :postal_code %>
+	  		<tr>
+	  			<th>住所</th>
+	  			<td><%= parking.text_field :address %></td>
+	  		</tr>
+	  		<tr>
+	  			<th>１日あたりの料金</th>
+	  			<td><%= parking.text_field :price %></td>
+	  		</tr>
+	  		<th>注意事項</th>
+	  			<td><%= parking.text_area :notes %></td>
+	  		</tr>
+	  		<tr>
+	  		   <td><%= parking.submit '画像登録へ'%></td>
+	  	    </tr>
 
- <h4>住所</h4>
- <%= parking.text_field :address %>
-
-  <h4>１日あたりの料金</h4>
- <%= parking.text_field :price %>
-  <h4>注意事項</h4>
- <%= parking.text_area :notes %>
-
-
-
-
- <%= parking.submit '画像登録へ'%>
-
-  <% end %>
+	  	</tbody>
+  	<% end %>
+  </table>
