@@ -26,8 +26,7 @@ class ParkingImagesController < ApplicationController
 
 	def destroy
 		@parking = Parking.find(params[:parking_id])
-	    @parking_image = ParkingImage.new(parking_image_params)
-	    @parking_image.parking_id = @parking.id
+		@parking_image = ParkingImage.find(params[:id])
 	    @parking_image.destroy
 	    redirect_to new_parking_parking_image_path
 	end

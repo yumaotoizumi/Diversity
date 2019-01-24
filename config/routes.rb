@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 #root '/parkings/top' => 'parkings#top'
 resources :users, only: [:show, :edit, :destroy, :update]
 resources :parkings, only: [:top, :new, :create, :index, :show, :edit, :destroy, :update]do
-   resources :parking_images, only: [:new, :create, :index, :show]
+   resources :parking_images, only: [:new, :create, :index, :show,:destroy]
 end
 get '/park_list' => 'users#park_list',as: 'park_list'
 
