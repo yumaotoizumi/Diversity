@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :current_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
   def show
   	@user = User.find(params[:id])
     # @pakings = Paking.where(user_id: current.user.id)
@@ -27,7 +29,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :email, :phone_number)
   end
 
 end

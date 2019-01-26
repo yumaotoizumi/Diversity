@@ -1,4 +1,5 @@
 class ParkingImagesController < ApplicationController
+	before_action :current_user, only: [:new, :create,:edit, :update, :destroy]
 
 	def new
 		@parking_image = ParkingImage.new
@@ -14,7 +15,10 @@ class ParkingImagesController < ApplicationController
 	    if  @parking_image.save
 		    flash[:notice] = "画像投稿成功しました！"
 		    redirect_to new_parking_parking_image_path
-	    end
+
+	    else
+	    redirect_to new_parking_parking_image_path
+	end
 	end
 
 	def index

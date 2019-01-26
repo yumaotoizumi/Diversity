@@ -1,4 +1,5 @@
 class ParkingsController < ApplicationController
+	before_action :current_user, only: [:new, :edit, :update, :destroy]
 
 	def map
 	  results = Geocoder.search(params[:address])

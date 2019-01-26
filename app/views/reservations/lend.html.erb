@@ -1,19 +1,23 @@
  <h4>駐車場貸出履歴</h4>
+<table class= 'table table-hover table-inverse'>
 
- <% @parkings.each do |parkings| %>
- <% parkings.reservations.each do |reservation| %>
-
-<%= reservation.user.name %>
- <%= reservation.parking.price%>円
-
-
-<%= reservation.start_day.strftime('%y年%m月%d日') %>
-<%= reservation.end_day.strftime('%y年%m月%d日') %>
-<%  reserve_total = ((reservation.end_day-reservation.start_day) / 86400) %>
- <%= reserve_total.ceil * reservation.parking.price %>円
- <br>
-<br>
-
-<% end %>
-
-<% end %>
+		<% @parkings.each do |parkings| %>
+		 <% parkings.reservations.each do |reservation| %>
+				 <tr>
+				 	<th>名前</th>
+				 	<th>１日の料金</th>
+				 	<th>利用開始日</th>
+				 	<th>返却日</th>
+				 	<th>合計金額</th>
+				 </tr>
+				 <tr>
+				 	<th><%= reservation.user.name %></th>
+				 	<th><%= reservation.parking.price%>円</th>
+				 	<th><%= reservation.start_day.strftime('%y年%m月%d日') %></th>
+				 	<th><%= reservation.end_day.strftime('%y年%m月%d日') %></th>
+				 	<%  reserve_total = ((reservation.end_day-reservation.start_day) / 86400) %>
+				 	<th><%= reserve_total.ceil * reservation.parking.price %>円</th>
+				 </tr>
+		 <% end %>
+		<% end %>
+</table>
