@@ -1,4 +1,4 @@
-<table>
+<table class= 'table table-hover table-inverse'>
 	<thead>
 		<tr>
 			<th>ユーザーid</th>
@@ -19,9 +19,9 @@
 			<td><%= parking.address %></td>
 			<td><%= parking.car_model %></td>
 			<td><%= parking.price %>円</td>
-			<td><%= link_to "編集", edit_parking_path(parking) %>,</td>
-			<td><%= link_to "削除", parking_path(parking), method: :delete, data: { confirm: '本当に削除しますか?' } %>,</td>
-			<td><%= link_to "画像編集", new_parking_parking_image_path(parking) %></td>
+			<td><%= link_to "編集", edit_parking_path(parking),class:"btn btn-default" %></td>
+			<td><%= link_to "削除", parking_path(parking), method: :delete, data: { confirm: '本当に削除しますか?' },class:"btn btn-default" %></td>
+			<td><%= link_to "画像編集", new_parking_parking_image_path(parking),class:"btn btn-default" %></td>
 
 
 

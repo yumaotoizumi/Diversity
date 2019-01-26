@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 	get '/map_request', to: 'parkings#map', as: 'map_request'
 #root 'parkings#new'
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 #root '/parkings/top' => 'parkings#top'
 resources :users, only: [:show, :edit, :destroy, :update]

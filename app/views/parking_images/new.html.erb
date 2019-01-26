@@ -5,8 +5,8 @@
     <% end %>
 
 <% @parking_images.each do |parking_image| %>
-  <%= attachment_image_tag parking_image,:image, :fill, 100, 100%>
-  <%= link_to "削除", parking_parking_image_path(@parking, parking_image), method: :delete, data: { confirm: '本当に削除しますか?' } %>
+  <%= attachment_image_tag parking_image,:image, :fill, 300, 300%>
+  <P><%= link_to "削除", parking_parking_image_path(@parking, parking_image), method: :delete, data: { confirm: '本当に削除しますか?' } %></P>
 <% end %>
 
 

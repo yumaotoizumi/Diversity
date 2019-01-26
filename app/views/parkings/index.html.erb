@@ -1,4 +1,4 @@
-<table>
+<table class= 'table table-hover table-inverse'>
 	<thead>
 		<tr>
 			<th>ユーザーid</th>
@@ -19,7 +19,7 @@
 			<td><%= parking.user.name %></td>
 			<td><%= parking.address%></td>
 			<td><%= parking.price %>円</td>
-			<td><%= link_to "予約ページ", parking_path(parking) %></td>
+			<td><%= link_to "予約ページ", parking_path(parking),class:"btn btn-default"%></td>
 		</tr>
 		<%end%>
 	</tbody>
