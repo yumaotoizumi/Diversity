@@ -1,37 +1,34 @@
 
-<h1>貸出駐車場登録 </h1>
-
 <%= form_for(@parking) do |parking|%>
-  <table>
-<thead>
-</thead>
-	  	<tbody>
-	  		<tr>
-	  			<th>利用可能サイズ</th>
-	  			<td><%= parking.select :car_model, [["軽自動車", "軽自動車"], ["コンパクトカー", "コンパクトカー"], ["セダン", "セダン"], ["SUV", "SUV"], ["ミニバン", "ミニバン"]]%></td>
-	  		</tr>
+<div class="container">
+	<h1>貸出駐車場登録 </h1>
+		  		<div class ="input-froup">
 
-	  		<tr>
-	  			<th>郵便番号</th>
-	  			<td><%= parking.text_field :postal_code %></td>
-	  		</tr>
+		  			<span class="input-group-addon">利用可能サイズ</span>
+		  			<%= parking.select :car_model, [["軽自動車", "軽自動車"], ["コンパクトカー", "コンパクトカー"], ["セダン", "セダン"], ["SUV", "SUV"], ["ミニバン", "ミニバン"]]%>
+		  		</div>
 
-	  		<tr>
-	  			<th>住所</th>
-	  			<td><%= parking.text_field :address %></td>
-	  		</tr>
-	  		<tr>
-	  			<th>１日あたりの料金</th>
-	  			<td><%= parking.text_field :price %></td>
-	  		</tr>
-	  		<th>注意事項</th>
-	  			<td><%= parking.text_area :notes %></td>
-	  		</tr>
-	  		<tr>
-	  		   <td><%= parking.submit '画像登録へ'%></td>
-	  	    </tr>
+		  		<div class ="input-froup">
+		  			<span class="input-group-addon">郵便番号</span>
+		  			<%= parking.text_field :postal_code %>
+		  		</div>
 
-	  	</tbody>
+		  		<div class ="input-froup">
+		  			<span class="input-group-addon">住所</span>
+		  			<%= parking.text_field :address %>
+		  		</div>
 
-  </table>
-<% end %>
+		  		<div class ="input-froup">
+		  			<span class="input-group-addon">１日あたりの料金</span>
+		  			<%= parking.text_field :price %>
+		  		</div>
+
+		  		<div class ="input-froup">
+		  			<span class="input-group-addon">注意事項</span>
+		  			<%= parking.text_area :notes %>
+		  		</div>
+
+		  		   <p><%= parking.submit '画像登録へ'%></p>
+
+	<% end %>
+</div>
