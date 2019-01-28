@@ -11,6 +11,8 @@ class ReservationsController < ApplicationController
    	 else
         @reservations = current_user.reservations.all
    	 	redirect_to parking_path(@reservation.parking_id)
+          flash[:danger] = "駐車場予約に失敗しました。もう一度お願いします。"
+
    	 end
 	end
 

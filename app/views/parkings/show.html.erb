@@ -1,34 +1,41 @@
+ <% if flash[:danger] %>
+      <div class="flash,alert alert-danger">
+        <%= flash[:danger] %>
+      </div>
+    <% end %>
+
+
         <% @parking.parking_images.each do |parking_image| %>
                <%= attachment_image_tag parking_image, :image, :fill, 300, 300%>
         <% end %>
-<table>
-    <thead>
-        <tr>
-            <th>貸出名</th>
-            <td><%= @parking.user.name %></td>
-        </tr>
-       <tr>
-            <th>住所</th>
-            <td><%= @parking.address %></td>
-        </tr>
-        <tr>
-            <th>値段（１日の料金）</th>
-            <td><%=@parking.price %>円</td>
-        </tr>
-        <tr>
-            <th>カータイプ</th>
-            <td><%=@parking.car_model %></td>
-        </tr>
-        <tr>
-            <th>注意事項</th>
-            <td><%=@parking.notes %></td>
-        </tr>
-    </thead>
-    <tbody>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>貸出名</th>
+                            <td><%= @parking.user.name %></td>
+                        </tr>
+                       <tr>
+                            <th>住所</th>
+                            <td><%= @parking.address %></td>
+                        </tr>
+                        <tr>
+                            <th>値段（１日の料金）</th>
+                            <td><%=@parking.price %>円</td>
+                        </tr>
+                        <tr>
+                            <th>カータイプ</th>
+                            <td><%=@parking.car_model %></td>
+                        </tr>
+                        <tr>
+                            <th>注意事項</th>
+                            <td><%=@parking.notes %></td>
+                        </tr>
+                    </thead>
+                    <tbody>
 
 
-    </tbody>
-</table>
+                    </tbody>
+                </table>
 
 
 
