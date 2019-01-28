@@ -4,11 +4,13 @@ class ReservationsController < ApplicationController
 	 # @reservation = current_user.reservations.create(reservation_params)
 	 @reservation = Reservation.new(reservation_params)
 	 @reservation.user_id = current_user.id
-	 if @reservation.save
+     if Reservation.exists?(parking_id: @reservation.parking_id,start_day: @reservation.start_day)
+      redirect_to parking_path(@reservation.parking_id)
+	   elsif @reservation.save
     	 redirect_to root_path notice:"予約が完了しました"
    	 else
         @reservations = current_user.reservations.all
-   	 	redirect_to parkings_path
+   	 	redirect_to parking_path(@reservation.parking_id)
    	 end
 	end
 

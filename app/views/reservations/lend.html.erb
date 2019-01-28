@@ -1,8 +1,6 @@
  <h4>駐車場貸出履歴</h4>
 <table class= 'table table-hover table-inverse'>
 
-		<% @parkings.each do |parkings| %>
-		 <% parkings.reservations.each do |reservation| %>
 				 <tr>
 				 	<th>名前</th>
 				 	<th>１日の料金</th>
@@ -11,6 +9,8 @@
 				 	<th>合計金額</th>
 				 </tr>
 				 <tr>
+				 	<% @parkings.each do |parkings| %>
+		 <% parkings.reservations.each do |reservation| %>
 				 	<th><%= reservation.user.name %></th>
 				 	<th><%= reservation.parking.price%>円</th>
 				 	<th><%= reservation.start_day.strftime('%y年%m月%d日') %></th>
