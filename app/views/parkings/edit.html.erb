@@ -1,4 +1,5 @@
-<%= form_for(@parking) do |parking| %>
+<div style="text-align:center;">
+	<%= form_for(@parking) do |parking| %>
 <h4>１日あたりの料金</h4>
 <%= parking.text_field :price %>円
 <h4>利用可能サイズ</h4>
@@ -12,6 +13,7 @@
  <h4>注意事項</h4>
  <%= parking.text_area :notes %>
 
-<%= parking.submit '投稿'%>
+<p><%= parking.submit '投稿'%></p>
 <% end %>
 <%= link_to "戻る", park_list_path %>
+</div>

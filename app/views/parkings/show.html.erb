@@ -8,7 +8,7 @@
         <% @parking.parking_images.each do |parking_image| %>
                <%= attachment_image_tag parking_image, :image, :fill, 300, 300%>
         <% end %>
-                <table>
+                <table class= 'table table-hover table-inverse' style="text-align:center;">
                     <thead>
                         <tr>
                             <th>貸出名</th>
@@ -97,5 +97,5 @@
     });
 
 </script>
-        <p><%= link_to "戻る", parkings_path %></p>
+        <%= link_to "戻る", parkings_path,class:"btn btn-default"  %>
 

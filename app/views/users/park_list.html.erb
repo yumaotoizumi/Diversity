@@ -1,8 +1,6 @@
 <table class= 'table table-hover table-inverse'>
 	<thead>
 		<tr>
-			<th>ユーザーid</th>
-			<th>パーキングid</th>
 			<th>パーキングのアドレス</th>
 			<th>カータイプ</th>
 			<th>値段（１日の料金）</th>
@@ -14,8 +12,6 @@
 	<tbody>
 		<% @user.parkings.each do |parking| %>
 		<tr>
-			<td><%= parking.user.id %></td>
-			<td><%= parking.id %></td>
 			<td><%= parking.address %></td>
 			<td><%= parking.car_model %></td>
 			<td><%= parking.price %>円</td>

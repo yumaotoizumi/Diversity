@@ -1,31 +1,31 @@
-<h1>マイページ</h1>
+
+<div class="user">
+	<div class="container">
+		<h1 style="text-align:center;">マイページ</h1>
 
 
 
-			<table class= 'table table-hover table-inverse'>
-				<thead>
-							<tr>
-								<th>ユーザーid</th>
-								<td><%= @user.id =%></td>
-							</tr>
-							<tr>
-								<th>ユーザーname</th>
-								<td><%= @user.name =%></td>
-							</tr>
-							<tr>
-								<th>アドレス</th>
-								<td><%= @user.email =%></td>
-							</tr>
-							<tr>
-								<th>電話番号</th>
-								<td><%= @user.phone_number =%></td>
-							</tr>
-				</thead>
-			</table>
+				<table class= 'table table-hover table-inverse' style="text-align:center;">
+					<thead>
 
-		        <%= link_to "プロフィール編集", edit_user_path(@user)%>,
-				<%= link_to "駐車場管理", park_list_path %>,
-				<%= link_to "駐車場使用歴", reservations_path %>,
-				<%= link_to "駐車場貸出歴", lend_path %>
+								<tr>
+									<th>ユーザー名</th>
+									<td><%= @user.name =%></td>
+								</tr>
+								<tr>
+									<th>アドレス</th>
+									<td><%= @user.email =%></td>
+								</tr>
+								<tr>
+									<th>電話番号</th>
+									<td><%= @user.phone_number =%></td>
+								</tr>
+					</thead>
+				</table>
 
-
+			        <p><%= link_to "プロフィール編集", edit_user_path(@user)%></p>
+					<p><%= link_to "駐車場管理", park_list_path %></p>
+					<p><%= link_to "駐車場使用歴", reservations_path %></p>
+					<p><%= link_to "駐車場貸出歴", lend_path %></p>
+	</div>
+</div>

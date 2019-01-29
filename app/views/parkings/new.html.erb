@@ -5,7 +5,7 @@
 		  		<div class ="input-froup">
 
 		  			<span class="input-group-addon">利用可能サイズ</span>
-		  			<%= parking.select :car_model, [["軽自動車", "軽自動車"], ["コンパクトカー", "コンパクトカー"], ["セダン", "セダン"], ["SUV", "SUV"], ["ミニバン", "ミニバン"]]%>
+		  			<%= parking.select :car_model, [["軽自動車", "軽自動車"], ["コンパクトカー", "コンパクトカー"], ["セダン", "セダン"], ["SUV", "SUV"], ["ミニバン", "ミニバン"]], style: "width:100%;" %>
 		  		</div>
 
 		  		<div class ="input-froup">
@@ -25,7 +25,7 @@
 
 		  		<div class ="input-froup">
 		  			<span class="input-group-addon">注意事項</span>
-		  			<%= parking.text_area :notes %>
+		  			<%= parking.text_area :notes, style: "width:100%;" %>
 		  		</div>
 
 		  		   <p><%= parking.submit '画像登録へ'%></p>

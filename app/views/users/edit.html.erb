@@ -1,27 +1,34 @@
-<h4>ユーザー編集ページ</h4>
+<div class="user" style="text-align:center;">
 
-<%= form_for(@user) do |f|%>
 
-  <div class="form-group">
-    <div class="form-inline">
-	      <label class="form-edit">ユーザー名</label>
-	      <%= f.text_field :name, :size=>"40", :class => "form-control" %>
-    </div>
+	<h4>ユーザー編集ページ</h4>
 
-    <div class="form-group">
-    <div class="form-inline">
-	      <label class="form-edit">メールアドレス</label>
-	      <%= f.text_field :email, :size=>"40", :class => "form-control" %>
-    </div>
+	<%= form_for(@user) do |f|%>
 
-     <div class="form-group">
-	    <div class="form-inline">
-		      <label class="form-edit">電話番号</label>
-		      <%= f.text_field :phone_number, :size=>"40", :class => "form-control" %>
+	  <div class="form-group">
+		    <div class="form-inline">
+			      <label class="form-edit">ユーザー</label>
+			      <%= f.text_field :name, :size=>"40%", :class => "form-control" %>
+		    </div>
+	  </div>
+
+	    <div class="form-group">
+		    <div class="form-inline">
+			      <label class="form-edit">アドレス</label>
+			      <%= f.text_field :email, :size=>"40%", :class => "form-control" %>
+		    </div>
 	    </div>
-    </div>
-  <%= f.submit "変更を保存"%>
-  <%= link_to "戻る", user_path %>
 
-<%end%>
+	     <div class="form-group">
+		    <div class="form-inline">
+			      <label class="form-edit">電話番号</label>
+			      <%= f.text_field :phone_number, :size=>"40%", :class => "form-control" %>
+		    </div>
+	    </div>
+	  <%= f.submit "変更を保存"%>
+	  <p><%= link_to "戻る", user_path %></p>
+
+	<%end%>
+
+</div>
 
